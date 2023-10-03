@@ -89,6 +89,7 @@ const getAnExpense = async (req, res) => {
 const getUserExpenses = async (req, res) => {
     try {
         const { id } = req.params
+        console.log(id)
         if (!id) return res.status(400).json({ "message": "user id is required for getUserExpenses" })
         const foundUser = await prisma.user.findFirst({
             where: {
@@ -104,7 +105,7 @@ const getUserExpenses = async (req, res) => {
         // const result = await prisma.user.findFirst({
         //     select: {
         //         expenses: true
-        //     },
+        //     },cd
         //     where: {
         //         id: Number(id)
         //     }
